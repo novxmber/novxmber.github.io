@@ -30,10 +30,14 @@ img{
 a{
     text-decoration: none;
     font-weight: bold;
+
+    transform: matrix3d(0);
+    transition: transform 0.2s linear;
 }
 
 a:hover{
     text-decoration: underline;
+    font-weight: bolder;
 }
 
 .bold{

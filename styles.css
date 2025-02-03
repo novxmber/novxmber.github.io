@@ -5,6 +5,10 @@
     color: white;
 }
 
+h1{
+    color: #ffaaff;
+}
+
 body{
     background-color: rgb(11, 11, 12);
     width: 100vw;
@@ -42,4 +46,8 @@ a:hover{
 
 .bold{
     font-weight: bolder;
+}
+
+.blue{
+    color: #4252e4;
 }

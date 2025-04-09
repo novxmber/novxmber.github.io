@@ -12,8 +12,8 @@ body{
     width: 100vw;
     height: 100vh;
 
-    background-image: linear-gradient(0deg, rgb(12, 10, 22) 0%, rgba(0, 0, 255, 0.404) 35%, rgba(0,212,255,0) 100%),
-     url(/images/wxpwallpaper.jpg);
+    background-image: linear-gradient(0deg, rgb(22, 10, 10) 0%, rgba(255, 0, 0, 0.404) 35%, rgba(255, 0, 0, 0) 100%),
+     url(/images/carbg.png);
     background-size: cover;
     background-position: center;
 
@@ -36,14 +36,22 @@ body{
 .main h1{
     font-weight: bolder;
     font-size: 400%;
-    color: rgb(129, 129, 255);
+    color: rgb(255, 67, 67);
+
+    text-shadow: 4px 5px 11px rgba(0,0,0,0.55);
+}
+
+.main p{
+    font-weight: bolder;
+    font-size: 250%;
+    color: rgb(255, 111, 111);
 
     text-shadow: 4px 5px 11px rgba(0,0,0,0.55);
 }
 
 .info{
-    background: rgb(26,13,45);
-    background: linear-gradient(0deg, rgba(26,13,45,1) 0%, rgba(12,10,22,1) 15%);
+    background: rgb(45, 13, 13);
+    background: linear-gradient(0deg, rgb(45, 13, 13) 0%, rgb(22, 10, 10) 15%);
 
     width: 100vw;
     padding-top: 15vh;
@@ -70,8 +78,8 @@ body{
 }
 
 .info a{
-    color: rgb(97, 95, 255);
-    text-shadow: 0px 0px 11px rgba(98, 95, 255, 0.582);
+    color: rgb(255, 95, 95);
+    text-shadow: 0px 0px 11px rgba(255, 95, 95, 0.582);
     font-size: 150%;
     text-decoration: none;
 }
@@ -81,7 +89,7 @@ body{
 }
 
 .bottombar{
-    background-color: rgb(6, 5, 14);
+    background-color: rgb(14, 5, 5);
     padding-top: 1vh;
     padding-bottom: 1vh;
 
@@ -106,7 +114,7 @@ body{
 }
 
 .novxmber{
-    background-color: rgb(26,13,45);
+    background-color: rgb(45, 13, 13);
     padding-top: 10vh;
     padding-bottom: 10vh;
 
@@ -139,8 +147,8 @@ body{
 }
 
 .novxmber a{
-    color: rgb(97, 95, 255);
-    text-shadow: 0px 0px 11px rgba(98, 95, 255, 0.582);
+    color: rgb(255, 95, 95);
+    text-shadow: 0px 0px 11px rgba(255, 95, 95, 0.582);
     font-size: 150%;
     text-decoration: none;
 }

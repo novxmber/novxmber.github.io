@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     font-family: Arial, Helvetica, sans-serif;
+    overflow-x: hidden;
 }
 
 body{
@@ -25,7 +26,7 @@ body{
 }
 
 .main img{
-    height: 20vh;
+    width: 40vw;
 
     border-radius: 5%;
     outline-width: 100px;
@@ -67,6 +68,8 @@ body{
     color: white;
     font-size: 300%;
     text-shadow: 0px 0px 11px rgba(255, 255, 255, 0.226);
+
+    text-align: center;
 }
 
 .info p{
@@ -131,7 +134,7 @@ body{
 }
 
 .novxmber img{
-    height: 30vh;
+    width: 60vw;
 
     border-radius: 25%;
     outline-width: 100px;

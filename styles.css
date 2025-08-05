@@ -7,13 +7,14 @@
 
 body{
     overflow-x: hidden;
+    background: black;
 }
 
 .main{
     width: 100vw;
     height: 100vh;
 
-    background-image: linear-gradient(0deg, rgb(0, 0, 0) 0%, rgba(0, 0, 0, 0.404) 35%, rgba(255, 0, 0, 0) 100%),
+    background: linear-gradient(180deg,rgba(0, 0, 0, 1) 0%, rgba(122, 122, 122, 0) 50%, rgba(0, 0, 0, 1) 100%),
      url(/images/blackbg.jpg);
     background-size: cover;
     background-position: center;
@@ -134,7 +135,7 @@ body{
 }
 
 .novxmber img{
-    width: 60vw;
+    width: 15vw;
 
     border-radius: 25%;
     outline-width: 100px;
@@ -155,5 +156,112 @@ body{
 }
 
 .novxmber a:hover{
+    text-decoration: underline;
+}
+
+.song{
+    width: 100vw;
+    padding-top: 10vh;
+    padding-bottom: 10vh;
+
+    background: black;
+    background-size: cover;
+    background-position: center;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-direction: column;
+
+    overflow-y: auto;
+}
+
+.song img{
+    width: 35vh;
+
+    border-radius: 5%;
+    outline-width: 100px;
+}
+
+.song h1{
+    text-align: center;
+    color: white;
+    text-shadow: 0px 0px 11px rgba(255, 255, 255, 0.753);
+}
+
+.song p{
+    text-align: center;
+    color: white;
+    text-shadow: 0px 0px 11px rgba(255, 255, 255, 0.753);
+}
+
+.song h2{
+    text-align: center;
+    color: white;
+    text-shadow: 0px 0px 11px rgba(255, 255, 255, 0.582);
+}
+
+.album a{
+    color: rgb(199, 199, 199);
+    text-shadow: 0px 0px 11px rgba(255, 255, 255, 0);
+    font-size: 100%;
+    text-decoration: none;
+}
+
+.album a:hover{
+    text-shadow: 0px 0px 11px rgba(255, 255, 255, 0.582);
+    text-decoration: underline;
+}
+
+.redirect{
+    width: 100vw;
+    height: 100vh;
+
+    background: black;
+    background-size: cover;
+    background-position: center;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-direction: column;
+
+    gap: 5vh;
+}
+
+.album{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-direction: row;
+
+    gap: 3vw;
+}
+
+.album h1{
+    color: white;
+}
+
+.album a{
+    color:rgb(192, 192, 192);
+}
+
+.album img{
+    width: 10vw;
+    border-radius: 5%;
+}
+
+.song a{
+    color: rgb(199, 199, 199);
+    text-shadow: 0px 0px 11px rgba(255, 255, 255, 0);
+    font-size: 100%;
+    text-decoration: none;
+}
+
+.song a:hover{
+    text-shadow: 0px 0px 11px rgba(255, 255, 255, 0.582);
     text-decoration: underline;
 }

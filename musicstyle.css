@@ -1,0 +1,356 @@
+* {
+    font-family: 'Arial', sans-serif;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box; 
+    color: white;
+}
+
+body{
+    width: 100vw;
+    height: 100vh;
+
+    background: rgb(26, 26, 29);
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.MainGUI{
+    width: 100%;
+    height: 90%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+}
+
+.AlbumSelect{
+    width: 20%;
+    height: 100%;
+
+    background-color: rgb(32, 32, 36);
+
+    scroll-behavior: smooth;
+    direction: rtl;
+
+    overflow-y: auto;
+}
+
+.AlbumSelect {
+    scrollbar-width: thin;
+    scrollbar-color: white rgb(32, 32, 36);
+}
+
+.albumItem{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    padding: 30px;
+    width: 100%;
+
+    background: transparent;
+    border: none;
+    text-align: left;
+    color: white;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: background 0.2s ease;
+}
+
+.albumItem img{
+    width: 70%;
+    height: 70%;
+
+    border-radius: 5px;
+}
+
+.albumItem h1{
+    font-size: 1.2em;
+}
+
+.albumItem:hover{
+    background-color: rgb(41, 41, 44);
+}
+
+.SongSelect {
+    flex: 1;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-y: auto;
+    padding-bottom: 40px;
+    gap: 60px;
+
+    scrollbar-width: thin;
+    scrollbar-color: white rgb(26, 26, 29);
+}
+
+.SongList {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.banner{
+    width: 100%;
+    height: 300px;
+    flex-shrink: 0;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.banner::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    
+    background-image: var(--banner-img, url('images/crazeeandrazeecore.jpg'));
+    background-size: cover;
+    background-position: center;
+
+    filter: blur(8px);
+    -webkit-mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
+    mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
+
+    z-index: -1;
+}
+
+.banner h1{
+    padding: 10px 20px;
+    font-size: 2.5em;
+    color: white;
+    text-shadow: 0 0 15px rgba(0, 0, 0, 0.685);
+    letter-spacing: -1px;
+}
+
+.song{
+    width: 100%;
+    min-height: 50px;
+
+    background-color: transparent;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+
+    padding: 0px 20px;
+    padding-left: 40px;
+    padding-right: 40px;
+
+    cursor: pointer;
+
+    transition: background 0.2s ease;
+}
+
+.song:hover{
+    background-color: rgb(41, 41, 44);
+}
+
+.song h1{
+    font-size: 1.2em;
+}
+
+.song h2{
+    color: rgb(185, 185, 185);
+    font-size: 0.9em;
+    font-weight: normal;
+}
+
+.PlayingBar{
+    width: 100%;
+    height: 10%;
+
+    background-color: rgb(19, 19, 20);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+#seek {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 100%;
+    height: 10px;
+    background: rgb(41, 41, 44);
+    cursor: pointer;
+    overflow: hidden;
+    outline: none;
+}
+
+#seek::-webkit-slider-thumb {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 0;
+    box-shadow: -100vw 0 0 100vw white;
+}
+
+#seek::-moz-range-thumb {
+    width: 0;
+    height: 0;
+    border: none;
+    box-shadow: -100vw 0 0 100vw white;
+}
+
+.Bottom{
+    width: 100%;
+    height: 90%;
+
+    background-color: rgb(19, 19, 20);
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+
+    gap: 10px;
+}
+
+.Controls{
+    width: auto;
+    height: 80%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+
+    gap: 10px;
+}
+
+.Controls button{
+    width: 40px;
+    height: 40px;
+
+    background-color: transparent;
+    border: none;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: white;
+
+    cursor: pointer;
+}
+
+.Controls button img{
+    width: 85%;
+    height: 85%;
+}
+
+.Controls button img:hover{
+    filter: brightness(0.7);
+}
+
+.Details{
+    flex: 1;
+    height: 85%;
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding-left: 10px;
+    flex-direction: row;
+
+    gap: 15px;
+}
+
+.Details img{
+    height: 100%;
+
+    border-radius: 5px;
+}
+
+.Text{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+
+    gap: 10px;
+}
+
+.Text h1{
+    font-size: 1em;
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.Text h2{
+    color: rgb(185, 185, 185);
+    font-size: 0.7em;
+    font-weight: normal;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.VolumeContainer {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-direction: row;
+    gap: 10px;
+    padding: 0 20px;
+}
+
+.VolumeContainer p {
+    font-size: 0.7em;
+    color: rgb(185, 185, 185);
+    text-transform: uppercase;
+}
+
+#volume {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 100px;
+    height: 5px;
+    background: rgb(41, 41, 44);
+    border-radius: 5px;
+    outline: none;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+#volume::-webkit-slider-thumb {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 0; 
+    box-shadow: -100vw 0 0 100vw white;
+}
+
+#volume::-moz-range-thumb {
+    width: 0;
+    height: 0;
+    border: none;
+    box-shadow: -100vw 0 0 100vw white;
+}
+
+#note {
+    font-size: 0.8em;
+    color: rgb(185, 185, 185);
+    text-align: center;
+    padding: 0px 8px;
+    max-width: 100%;
+    margin-top: 10px;
+}

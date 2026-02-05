@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>novxmber music player</title>
+    <link rel="stylesheet" href="musicstyle.css">
+</head>
+<body>
+    <audio class="player"></audio>
+
+    <div class="MainGUI">
+        <div class="AlbumSelect">
+            <button class="albumItem" data-album="novxmber">
+                <img src="images/novxmbercover.png" alt="">
+                <div class="info">
+                    <h1>NOVXMBER</h1>
+                </div>
+            </button>
+            <button class="albumItem" data-album="fdt">
+                <img src="images/fdt.png" alt="">
+                <div class="info">
+                    <h1>FUDOTRU</h1>
+                </div>
+            </button>
+            <button class="albumItem" data-album="crazeeandrazeecore">
+                <img src="images/crazeeandrazeecore.jpg" alt="">
+                <div class="info">
+                    <h1>crazeeandrazeecore: red</h1>
+                </div>
+            </button>
+            <button class="albumItem" data-album="digital">
+                <img src="images/digitalcover.png" alt="">
+                <div class="info">
+                    <h1>digital.</h1>
+                </div>
+            </button>
+        </div>
+        <div class="SongSelect">
+            <div class="banner" id="bannerContainer"> <h1 id="bannerTitle">crazeenrazeecore: red</h1> </div>
+
+            <div class="SongList" id="songListContainer">
+                
+            </div>
+
+            <p id="note">placeholder</p>
+        </div>
+    </div>
+    <div class="PlayingBar">
+        <input type="range" class="seekbar" id="seek" value="0" min="0" max="100">
+        <div class="Bottom">
+            <div class="Details">
+                <img src="images/novxmber.png" alt="">
+                <div class="Text">
+                    <h1></h1>
+                    <h2></h2>
+                </div>
+            </div>
+            <div class="Controls">
+                <button id="prev"><img src="images/previous.png" alt=""></button>
+                <button id="play"><img src="images/play.png" alt=""></button>
+                <button id="next"><img src="images/next.png" alt=""></button>
+            </div>
+            <div class="VolumeContainer">
+                <p>Volume</p>
+                <input type="range" id="volume" min="0" max="100" value="50">
+            </div>
+        </div>
+    </div>
+
+ <script>
+    const albumData = {
+        "novxmber": {
+            title: "NOVXMBER",
+            cover: "images/novxmbercover.png",
+            note: "sick!",
+            songs: [
+                { name: "born in the right generation", duration: "01:47", file: "musicfiles/NOVXMBER/bornintherightgeneration.wav" },
+                { name: "crying in the ikea parking lot", duration: "02:22" , file: "musicfiles/NOVXMBER/crying.wav" },
+                { name: "i feel like my head is locked if you know what i mean", duration: "02:17", file: "musicfiles/NOVXMBER/locked.wav" },
+                { name: "pinnnnkkkkkk", duration: "02:09", file: "musicfiles/NOVXMBER/pinnnnkkk.wav" },
+                { name: "crazy am i right", duration: "01:37", file: "musicfiles/NOVXMBER/crazy.wav" },
+                { name: "i wish to remove my organs and become a robot", duration: "02:27", file: "musicfiles/NOVXMBER/robot.wav" },
+                { name: "sometimes i just wanna", duration: "01:34", file: "musicfiles/NOVXMBER/sometimes.wav" },
+                { name: "summer has come (this song was made when summer started not my fault)", duration: "01:59", file: "musicfiles/NOVXMBER/summer.wav" },
+                { name: "4K", duration: "01:48", file: "musicfiles/NOVXMBER/4k.wav" },
+                { name: "bass n shit", duration: "01:59", file: "musicfiles/NOVXMBER/bassnshit.wav" },
+                { name: "NOVEM NOVEM NOVEM", duration: "02:44", file: "musicfiles/NOVXMBER/novem.wav" },
+                { name: "pmo ngl", duration: "01:21", file: "musicfiles/NOVXMBER/pmo.wav" },
+                { name: "i thought about quitting music", duration: "02:04", file: "musicfiles/NOVXMBER/quitting.wav" }
+            ]
+        },
+        "fdt": {
+            title: "FUDOTRU",
+            cover: "images/fdt.png",
+            note: "i felt deep i guess",
+            songs: [
+                { name: "FUDOTRU", duration: "1:39", file: "musicfiles/FUDOTRU/FUDOTRU.wav" },
+                { name: "gender bender", duration: "2:31", file: "musicfiles/FUDOTRU/TRANSRIGHTS.wav" }
+            ]
+        },
+        "crazeeandrazeecore": {
+            title: "crazeeandrazeecore: red",
+            cover: "images/crazeeandrazeecore.jpg",
+            note: "this is what i hear when i try to concentrate",
+            songs: [
+                { name: "my brain 24/7", duration: "1:49", file: "musicfiles/carc/1_this-is-what-i-hear-when-i-try-to-concentrate.wav"},
+                { name: "please just try giving the album a listen please?", duration: "2:06", file: "musicfiles/carc/2_PLEASE-JUST-TRY-LISTENING-TO-ATLEAST-THIS-SONG-BEFORE-GIVING-UP.wav"},
+                { name: "i never left", duration: "1:52", file: "musicfiles/carc/3_i-never-left.wav" },
+                { name: "the whole entire world is against me", duration: "3:02", file: "musicfiles/carc/4_the-whole-entire-world-is-against-me.wav" },
+                { name: "just got diagnosed with adhd", duration: "1:10", file: "musicfiles/carc/5_justgotdiagnosedwithadhd.wav" },
+                { name: "crush", duration: "1:43", file: "musicfiles/carc/6_crush.wav" },
+                { name: "red", duration: "2:32", file: "musicfiles/carc/7_red.wav" },
+                { name: "lonmouer", duration: "1:55", file: "musicfiles/carc/8_lonmouer.wav" },
+                { name: "lawnmower", duration: "0:44", file: "musicfiles/carc/9_lawnmower.wav" },
+                { name: "do you think im frightening?", duration: "1:44", file: "musicfiles/carc/10_do-you-think-im-frightening.wav" },
+                { name: "baby", duration: "1:38", file: "musicfiles/carc/11_baby.wav" }
+            ]
+        },
+        "digital": {
+            title: "digital.",
+            cover: "images/digitalcover.png",
+            note: "the first album lol, i like it its chill (THIS INCLUDES THE UPDATED VERSION OF CAN WE TALK ABOUT THE POLITICAL AND ECONOMIC STATE OF THE WORLD RIGHT NOW)",
+            songs: [
+                { name: "tutorial", duration: "1:42", file: "musicfiles/digital/tutorial.mp3" },
+                { name: "somewhere out there in the sky", duration: "2:10", file: "musicfiles/digital/somewhere_out_there_in_the_sky.mp3" },
+                { name: "sidekick", duration: "2:42", file: "musicfiles/digital/sidekick.mp3" },
+                { name: "break the internet", duration: "2:06", file: "musicfiles/digital/breaktheinternet.mp3" },
+                { name: "bone", duration: "1:31", file: "musicfiles/digital/bone.mp3" },
+                { name: "crashout", duration: "3:14", file: "musicfiles/digital/crashout.mp3" },
+                { name: "i know u want it", duration: "1:41", file: "musicfiles/digital/iknowuwantit.mp3" },
+                { name: "i think my dentist can read my mind", duration: "1:30", file: "musicfiles/digital/i_think_my_dentist_can_read_my_mind.mp3" },
+                { name: "can we talk about the political and economic state of the world right now", duration: "1:25", file: "musicfiles/digital/can_we_talk_about_the_political_and_economic_state_of_the_world_right_now.mp3" }
+            ]
+        }
+    };
+
+    const player = document.querySelector('.player');
+    const seekbar = document.getElementById('seek');
+
+    const songListContainer = document.getElementById('songListContainer');
+    const bannerTitle = document.getElementById('bannerTitle');
+    const bannerContainer = document.getElementById('bannerContainer');
+    const note = document.getElementById('note');
+
+    const playerTitle = document.querySelector('.PlayingBar .Details .Text h1');
+    const playerAlbum = document.querySelector('.PlayingBar .Details .Text h2');
+    const playerImg = document.querySelector('.PlayingBar .Details img');
+
+    const playButton = document.getElementById('play');
+    const prevButton = document.getElementById('prev');
+    const nextButton = document.getElementById('next');
+
+    const volumeSlider = document.getElementById('volume');
+
+    volumeSlider.addEventListener('input', () => {
+        player.volume = volumeSlider.value / 100;
+    });
+
+    player.addEventListener('timeupdate', () => {
+        if (player.duration) {
+            const value = (player.currentTime / player.duration) * 100;
+            seekbar.value = value;
+        }
+    });
+
+    seekbar.addEventListener('input', () => {
+        const seekTo = (seekbar.value / 100) * player.duration;
+        player.currentTime = seekTo;
+    });
+
+    playButton.onclick = () => {
+        if (player.paused) {
+            player.play();
+        } else {
+            player.pause();
+        }
+    };
+
+    prevButton.onclick = () => {
+        
+    };
+
+    function playSong(song, albumCover) {
+        player.src = song.file;
+
+        playerTitle.innerText = song.name;
+        playerAlbum.innerText = bannerTitle.innerText;
+        playerImg.src = albumCover;
+        player.play();
+    }
+
+    function loadAlbum(albumKey) {
+        const album = albumData[albumKey];
+        if (!album) return;
+
+        bannerTitle.innerText = album.title;
+
+        bannerContainer.style.setProperty('--banner-img', `url(${album.cover})`);
+
+        songListContainer.innerHTML = '';
+
+        album.songs.forEach((song, index) => {
+            const songDiv = document.createElement('div');
+            songDiv.classList.add('song');
+            
+            songDiv.innerHTML = `
+                <h1>${index + 1}. ${song.name}</h1>
+                <h2>${song.duration}</h2>
+            `;
+
+            songDiv.onclick = () => playSong(song, album.cover);
+            
+            songListContainer.appendChild(songDiv);
+        });
+
+        note.innerText = album.note || 'Nothing to see here...';
+    }
+
+    document.querySelectorAll('.albumItem').forEach(button => {
+        button.onclick = () => {
+            const albumKey = button.getAttribute('data-album');
+            loadAlbum(albumKey);
+        };
+    });
+
+    loadAlbum('novxmber');
+</script>
+</body>
+</html>

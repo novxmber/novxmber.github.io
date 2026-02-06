@@ -5,12 +5,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>novxmber music player</title>
     <link rel="stylesheet" href="musicstyle.css">
+    <link rel="shortcut icon" href="images/nov.png" type="image/x-icon">
 </head>
 <body>
     <audio class="player"></audio>
 
     <div class="MainGUI">
         <div class="AlbumSelect">
+            <button class="albumItem" data-album="digitalaniv">
+                <img src="images/digitalaniv.png" alt="">
+                <div class="info">
+                    <h1>tutorial (1 year)</h1>
+                </div>
+            </button>
+            <button class="albumItem" data-album="dopamine">
+                <img src="images/dopamine.png" alt="">
+                <div class="info">
+                    <h1>dopamine</h1>
+                </div>
+            </button>
+            <button class="albumItem" data-album="ctrr">
+                <img src="images/ctrr.png" alt="">
+                <div class="info">
+                    <h1>Cross The Road Reloaded</h1>
+                </div>
+            </button>
             <button class="albumItem" data-album="novxmber">
                 <img src="images/novxmbercover.png" alt="">
                 <div class="info">
@@ -29,10 +48,58 @@
                     <h1>crazeeandrazeecore: red</h1>
                 </div>
             </button>
+            <button class="albumItem" data-album="ctr2">
+                <img src="images/CTR2.jpg" alt="">
+                <div class="info">
+                    <h1>Cross The Road Vol.2 Original Soundtrack</h1>
+                </div>
+            </button>
+            <button class="albumItem" data-album="digital-scrapped-content">
+                <img src="images/digitalscrappedcover.png" alt="">
+                <div class="info">
+                    <h1>digital-scrapped-content</h1>
+                </div>
+            </button>
             <button class="albumItem" data-album="digital">
                 <img src="images/digitalcover.png" alt="">
                 <div class="info">
-                    <h1>digital.</h1>
+                    <h1>.digital</h1>
+                </div>
+            </button>
+            <button class="albumItem" data-album="ctr1">
+                <img src="images/CTR1.jpg" alt="">
+                <div class="info">
+                    <h1>Cross The Road Vol.1 Original Soundtrack</h1>
+                </div>
+            </button>
+            <button class="albumItem" data-album="dash">
+                <img src="images/DASHcover.jpg" alt="">
+                <div class="info">
+                    <h1>DASH</h1>
+                </div>
+            </button>
+            <button class="albumItem" data-album="microwave">
+                <img src="images/microwavecover.jpg" alt="">
+                <div class="info">
+                    <h1>my finger got stuck on the microwave door and it hurt a lot ouch</h1>
+                </div>
+            </button>
+            <button class="albumItem" data-album="pop">
+                <img src="images/popcover.jpg" alt="">
+                <div class="info">
+                    <h1>!pop</h1>
+                </div>
+            </button>
+            <button class="albumItem" data-album="cyber">
+                <img src="images/cybercover.jpg" alt="">
+                <div class="info">
+                    <h1>cyber</h1>
+                </div>
+            </button>
+            <button class="albumItem" data-album="chill">
+                <img src="images/chillcover.png" alt="">
+                <div class="info">
+                    <h1>chill</h1>
                 </div>
             </button>
         </div>
@@ -47,7 +114,7 @@
         </div>
     </div>
     <div class="PlayingBar">
-        <input type="range" class="seekbar" id="seek" value="0" min="0" max="100">
+        <input type="range" class="seekbar" id="seek" value="0" min="0" max="5000">
         <div class="Bottom">
             <div class="Details">
                 <img src="images/novxmber.png" alt="">
@@ -63,13 +130,29 @@
             </div>
             <div class="VolumeContainer">
                 <p>Volume</p>
-                <input type="range" id="volume" min="0" max="100" value="50">
+                <input type="range" id="volume" min="0" max="50" value="50">
             </div>
         </div>
     </div>
 
  <script>
     const albumData = {
+        "digitalaniv": {
+            title: "tutorial (1 year anniversary edition)",
+            cover: "images/digitalaniv.png",
+            note: "heres to 1 year of digital",
+            songs: [
+                { name: "tutorial b-side", duration: "1:44", file: "musicfiles/digitalaniv/tutorial-bside.mp3" }
+            ]
+        },
+        "dopamine": {
+            title: "dopamine",
+            cover: "images/dopamine.png",
+            note: "i couldnt upload this cuz of copyright",
+            songs: [
+                { name: "dopamine", duration: "1:43", file: "musicfiles/dopamine.wav" }
+            ]
+        },
         "novxmber": {
             title: "NOVXMBER",
             cover: "images/novxmbercover.png",
@@ -117,6 +200,20 @@
                 { name: "baby", duration: "1:38", file: "musicfiles/carc/11_baby.wav" }
             ]
         },
+        "ctr2": {
+            title: "Cross The Road Vol.2 Original Soundtrack",
+            cover: "images/CTR2.jpg",
+            note: "second album for my roblox game cross the road (rip)",
+            songs: [
+                { name: "Reset & Respawn", duration: "1:55", file: "musicfiles/CTR/Reset&Respawn.mp3" },
+                { name: "Lag", duration: "2:18", file: "musicfiles/CTR/Lag.mp3" },
+                { name: "Pizza!", duration: "1:43", file: "musicfiles/CTR/pizza.mp3" },
+                { name: "Destiny And Fate", duration: "2:21", file: "musicfiles/CTR/DestinyAndFate.mp3" },
+                { name: "Intertwined Steel", duration: "1:32", file: "musicfiles/CTR/IntertwinedSteel.mp3" },
+                { name: "Joe's Stop", duration: "1:00", file: "musicfiles/CTR/joes711.mp3" },
+                { name: "Nerm's Tune", duration: "1:45", file: "musicfiles/CTR/NermsTune.mp3" },
+            ]
+        },
         "digital": {
             title: "digital.",
             cover: "images/digitalcover.png",
@@ -131,6 +228,79 @@
                 { name: "i know u want it", duration: "1:41", file: "musicfiles/digital/iknowuwantit.mp3" },
                 { name: "i think my dentist can read my mind", duration: "1:30", file: "musicfiles/digital/i_think_my_dentist_can_read_my_mind.mp3" },
                 { name: "can we talk about the political and economic state of the world right now", duration: "1:25", file: "musicfiles/digital/can_we_talk_about_the_political_and_economic_state_of_the_world_right_now.mp3" }
+            ]
+        },
+        "chill": {
+            title: "chill",
+            cover: "images/chillcover.png",
+            note: "old unreleased songs before i even had an account on any platform",
+            songs: [
+                { name: "chill", duration: "1:42", file: "musicfiles/chill/chill.mp3" },
+                { name: "chill b-side", duration: "1:27", file: "musicfiles/chill/chill_bside.mp3" }
+            ]
+        },
+        "ctr1": {
+            title: "Cross The Road Vol.1 Original Soundtrack",
+            cover: "images/CTR1.jpg",
+            note: "an album for my roblox game cross the road (rip)",
+            songs: [
+                { name: "Cross The Road", duration: "1:42", file: "musicfiles/CTR/CrossTheRoad.mp3" },
+                { name: "Dodge The Teapots Of Doom", duration: "1:50", file: "musicfiles/CTR/DodgeTheTeapotsOfDoom.mp3" }
+            ]
+        },
+        "microwave": {
+            title: "my finger got stuck on the microwave door and it hurt a lot ouch",
+            cover: "images/microwavecover.jpg",
+            note: "this was a lie that didnt happen sorry",
+            songs: [
+                { name: "my finger got stuck on the microwave door and it hurt a lot ouch", duration: "1:37", file: "musicfiles/microwave.wav" }
+            ]
+        },
+        "pop": {
+            title: "pop!",
+            cover: "images/popcover.jpg",
+            note: "single debut",
+            songs: [
+                { name: "pop!", duration: "1:01", file: "musicfiles/pop.wav" }
+            ]
+        },
+        "dash": {
+            title: "DASH",
+            cover: "images/DASHcover.jpg",
+            note: "vocaloid also technically my actual premiere cuz it was my first video on yt",
+            songs: [
+                { name: "DASH", duration: "2:00", file: "musicfiles/dash/dash.wav" },
+                { name: "HATE OR LOVE YOU", duration: "3:08", file: "musicfiles/dash/loveorhateyou.wav" },
+                { name: "WELCOME", duration: "2:00", file: "musicfiles/dash/welcome.wav" }
+            ]
+        },
+        "cyber": {
+            title: "cyber",
+            cover: "images/cybercover.jpg",
+            note: "i just made this for some reason, i like it",
+            songs: [
+                { name: "cyber", duration: "2:51", file: "musicfiles/cyber.wav" }
+            ]
+        },
+        "digital-scrapped-content": {
+            title: "digital-scrapped-content",
+            cover: "images/digitalscrappedcover.png",
+            note: "scrapped songs that didnt make it",
+            songs: [
+                { name: "online", duration: "2:13", file: "musicfiles/digitalscrapped/online.wav" },
+                { name: "friday", duration: "1:33", file: "musicfiles/digitalscrapped/friday.wav" },
+                { name: "russian roulette", duration: "1:24", file: "musicfiles/digitalscrapped/kpop.wav" },
+                { name: "liar", duration: "2:40", file: "musicfiles/digitalscrapped/liar.wav" },
+                { name: "crank that", duration: "1:33", file: "musicfiles/digitalscrapped/crankthat.wav" }
+            ]
+        },
+        "ctrr": {
+            title: "CTR OST: RELOADED",
+            cover: "images/ctrr.png",
+            note: "tracks i made to sorta remix the original theme song, doesnt mean the game is getting remastered yet though",
+            songs: [
+                { name: "CROSS THE ROAD RELOADED", duration: "1:42", file: "musicfiles/CTR/CTRRELOADED.wav" },
+                { name: "CROSSING", duration: "1:57", file: "musicfiles/CTR/crossing.wav" }
             ]
         }
     };
@@ -153,19 +323,22 @@
 
     const volumeSlider = document.getElementById('volume');
 
+    player.onplay = () => playButton.querySelector('img').src = 'images/pause.png';
+    player.onpause = () => playButton.querySelector('img').src = 'images/play.png';
+
     volumeSlider.addEventListener('input', () => {
-        player.volume = volumeSlider.value / 100;
+        player.volume = volumeSlider.value / 50;
     });
 
     player.addEventListener('timeupdate', () => {
         if (player.duration) {
-            const value = (player.currentTime / player.duration) * 100;
+            const value = (player.currentTime / player.duration) * 5000;
             seekbar.value = value;
         }
     });
 
     seekbar.addEventListener('input', () => {
-        const seekTo = (seekbar.value / 100) * player.duration;
+        const seekTo = (seekbar.value / 5000) * player.duration;
         player.currentTime = seekTo;
     });
 
@@ -178,7 +351,23 @@
     };
 
     prevButton.onclick = () => {
-        
+        const currentAlbum = Object.values(albumData).find(album => album.title === bannerTitle.innerText);
+        if (!currentAlbum) return;
+
+        const currentSongIndex = currentAlbum.songs.findIndex(song => song.name === playerTitle.innerText);
+        if (currentSongIndex > 0) {
+            playSong(currentAlbum.songs[currentSongIndex - 1], currentAlbum.cover);
+        }
+    };
+
+    nextButton.onclick = () => {
+        const currentAlbum = Object.values(albumData).find(album => album.title === bannerTitle.innerText);
+        if (!currentAlbum) return;
+
+        const currentSongIndex = currentAlbum.songs.findIndex(song => song.name === playerTitle.innerText);
+        if (currentSongIndex < currentAlbum.songs.length - 1) {
+            playSong(currentAlbum.songs[currentSongIndex + 1], currentAlbum.cover);
+        }
     };
 
     function playSong(song, albumCover) {
@@ -224,7 +413,7 @@
         };
     });
 
-    loadAlbum('novxmber');
+    loadAlbum('digitalaniv');
 </script>
 </body>
 </html>

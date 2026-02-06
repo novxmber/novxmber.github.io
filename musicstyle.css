@@ -56,11 +56,12 @@ body{
 
     background: transparent;
     border: none;
-    text-align: left;
+    text-align: center;
     color: white;
     cursor: pointer;
     border-radius: 8px;
-    transition: background 0.2s ease;
+
+    transition: background 0.5s ease, box-shadow 0.5s ease;
 }
 
 .albumItem img{
@@ -68,6 +69,7 @@ body{
     height: 70%;
 
     border-radius: 5px;
+    transition: all 0.3s ease;
 }
 
 .albumItem h1{
@@ -76,6 +78,12 @@ body{
 
 .albumItem:hover{
     background-color: rgb(41, 41, 44);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+}
+
+.albumItem:hover img{
+    filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.5));
+    transform: scale(1.05);
 }
 
 .SongSelect {
@@ -90,6 +98,8 @@ body{
 
     scrollbar-width: thin;
     scrollbar-color: white rgb(26, 26, 29);
+
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
 }
 
 .SongList {
@@ -155,11 +165,12 @@ body{
 
     cursor: pointer;
 
-    transition: background 0.2s ease;
+    transition: background 0.5s ease, box-shadow 0.5s ease;
 }
 
 .song:hover{
     background-color: rgb(41, 41, 44);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
 }
 
 .song h1{
@@ -193,6 +204,14 @@ body{
     cursor: pointer;
     overflow: hidden;
     outline: none;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+
+    transition: background 0.2s ease, box-shadow 0.2s ease;
+}
+
+#seek:hover {
+    background: rgb(50, 50, 54);
+    box-shadow: 0 0 25px rgba(82, 82, 82, 0.5);
 }
 
 #seek::-webkit-slider-thumb {
@@ -254,10 +273,13 @@ body{
 .Controls button img{
     width: 85%;
     height: 85%;
+
+    transition: transform 0.2s ease, filter 0.2s ease;
 }
 
 .Controls button img:hover{
-    filter: brightness(0.7);
+    filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.5));
+    transform: scale(1.1);
 }
 
 .Details{
@@ -324,12 +346,19 @@ body{
     appearance: none;
     -webkit-appearance: none;
     width: 100px;
-    height: 5px;
+    height: 10px;
     background: rgb(41, 41, 44);
     border-radius: 5px;
     outline: none;
     cursor: pointer;
     overflow: hidden;
+
+    transition: background 0.2s ease, box-shadow 0.2s ease;
+}
+
+#volume:hover {
+    background: rgb(50, 50, 54);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
 #volume::-webkit-slider-thumb {
